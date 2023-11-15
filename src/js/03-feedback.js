@@ -13,9 +13,10 @@ refs.formEl.addEventListener('input', throttle(formData, 500));
 
 function formData(e) {
 
-    data[e.target.name] = e.target.value;
+    data.email = refs.emailField.value;
+    data.message = refs.messageField.value;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
-
+//console.log(data)
 }
 function addSavedData() {
     const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
